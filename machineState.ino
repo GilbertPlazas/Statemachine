@@ -149,14 +149,14 @@ void endAlarma() {
 void ReadTempFunct() {
   temperatura = dht.readTemperature();
   // Si estamos en monitoreo ambiental y se cumplen las condiciones, se activa la señal para alarma
-  if (stateMachine.GetState() == Monitoreo_Amb && (temperatura > 27) && (humedad > 80)) {
+  if (stateMachine.GetState() == Monitoreo_Amb && (temperatura > 24) && (humedad > 70)) {
     input = Signh;
   }
 }
 
 void ReadHumFunct() {
   humedad = dht.readHumidity();
-  if (stateMachine.GetState() == Monitoreo_Amb && (temperatura > 27) && (humedad > 80)) {
+  if (stateMachine.GetState() == Monitoreo_Amb && (temperatura > 24) && (humedad > 70)) {
     input = Signh;
   }
 }
